@@ -17,7 +17,7 @@ public class Bishop extends Chessman {
             }
         }
         if (n > 0 && m > 0) {
-            for (int i = 0; i != Math.sqrt(n); i++) {
+            for (int i = 0; i != Math.abs(n); i++) {
                 for (Chessman chessman : menArr) {
                     if (chessman.getNumCoordinate() == getNumCoordinate() + i && chessman.getAlphabetCoordinate() == getAlphabetCoordinate() + i)
                         return false;
@@ -26,7 +26,7 @@ public class Bishop extends Chessman {
 
         }
         if (n > 0 && m < 0) {
-            for (int i = 0; i != Math.sqrt(n); i++) {
+            for (int i = 0; i != Math.abs(n); i++) {
                 for (Chessman chessman : menArr) {
                     if (chessman.getNumCoordinate() == getNumCoordinate() - i && chessman.getAlphabetCoordinate() == getAlphabetCoordinate() + i)
                         return false;
@@ -35,7 +35,7 @@ public class Bishop extends Chessman {
 
         }
         if (n < 0 && m > 0) {
-            for (int i = 0; i != Math.sqrt(n); i++) {
+            for (int i = 0; i != Math.abs(n); i++) {
                 for (Chessman chessman : menArr) {
                     if (chessman.getNumCoordinate() == getNumCoordinate() + i && chessman.getAlphabetCoordinate() == getAlphabetCoordinate() - i)
                         return false;
@@ -44,7 +44,7 @@ public class Bishop extends Chessman {
 
         }
         if (n < 0 && m < 0) {
-            for (int i = 0; i != Math.sqrt(n); i++) {
+            for (int i = 0; i != Math.abs(n); i++) {
                 for (Chessman chessman : menArr) {
                     if (chessman.getNumCoordinate() == getNumCoordinate() - i && chessman.getAlphabetCoordinate() == getAlphabetCoordinate() - i)
                         return false;
