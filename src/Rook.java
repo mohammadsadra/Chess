@@ -8,7 +8,7 @@ public class Rook extends Chessman {
 
     public boolean check(int alpCoordinate, int numCordinate, ArrayList<Chessman> menArr) {
         for (Chessman chessman : menArr) {
-            if (chessman.getAlphabetCoordinate() == getAlphabetCoordinate() && chessman.getNumCoordinate() == getNumCoordinate()) {
+            if (chessman.getAlphabetCoordinate() == alpCoordinate && chessman.getNumCoordinate() == numCordinate) {
                 if (chessman.getColor() == getColor())
                     return false;
             }

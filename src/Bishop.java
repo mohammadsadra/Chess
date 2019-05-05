@@ -11,7 +11,7 @@ public class Bishop extends Chessman {
         n = alpCoordinate - getAlphabetCoordinate();
         m = numCordinate - getNumCoordinate();
         for (Chessman chessman : menArr) {
-            if (chessman.getAlphabetCoordinate() == getAlphabetCoordinate() && chessman.getNumCoordinate() == getNumCoordinate()) {
+            if (chessman.getAlphabetCoordinate() == alpCoordinate && chessman.getNumCoordinate() == numCordinate) {
                 if (chessman.getColor() == getColor())
                     return false;
             }
