@@ -1,8 +1,15 @@
 public class Chessman {
-    private String name;
     private String color;
-    private String alphabetCoordinate;
+    private int alphabetCoordinate;
     private int numCoordinate;
+    private String name;
+
+    public Chessman(String color, int alphabetCoordinate, int numCoordinate){
+        this.alphabetCoordinate =alphabetCoordinate;
+        this.numCoordinate = numCoordinate;
+        this.color = color;
+
+    }
 
     public int getNumCoordinate() {
         return numCoordinate;
@@ -12,19 +19,9 @@ public class Chessman {
         this.numCoordinate = numCoordinate;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getAlphabetCoordinate() {
+    public int getAlphabetCoordinate() {
         return alphabetCoordinate;
     }
 
@@ -32,8 +29,16 @@ public class Chessman {
         return color;
     }
 
-    public void setAlphabetCoordinate(String alphabetCoordinate) {
+    public void setAlphabetCoordinate(int alphabetCoordinate) {
         this.alphabetCoordinate = alphabetCoordinate;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 
 }
