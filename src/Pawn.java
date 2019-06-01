@@ -20,6 +20,40 @@ public class Pawn extends Chessman {
      */
     public boolean check(int alpCoordinate, int numCordinate, ArrayList<Chessman> menArr) {
         if (getColor().equals("white")) {
+            if (numCordinate == getNumCoordinate() - 1 && alpCoordinate == getAlphabetCoordinate() + 1) {
+                for (Chessman chessman : menArr) {
+                    if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() + 1) && chessman.getNumCoordinate() == getNumCoordinate() - 1) {
+                        return true;
+                    }
+                }
+            }
+            if (numCordinate == getNumCoordinate() - 1 && (alpCoordinate == getAlphabetCoordinate() - 1)) {
+                for (Chessman chessman : menArr) {
+                    if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() - 1) && chessman.getNumCoordinate() == getNumCoordinate() - 1) {
+                        return true;
+                    }
+                }
+            }
+        } else {
+            if (numCordinate == getNumCoordinate() + 1 && (alpCoordinate == getAlphabetCoordinate() - 1)) {
+                for (Chessman chessman : menArr) {
+                    if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() - 1) && chessman.getNumCoordinate() == getNumCoordinate() + 1) {
+                        return true;
+                    }
+
+                }
+            }
+            if (numCordinate == getNumCoordinate() + 1 && alpCoordinate == getAlphabetCoordinate() + 1) {
+                for (Chessman chessman : menArr) {
+                    if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() + 1) && chessman.getNumCoordinate() == getNumCoordinate() + 1) {
+                        return true;
+                    }
+
+                }
+            }
+        }
+
+        if (getColor().equals("white")) {
             if (getFirstMove() == 0) {
                 if ((numCordinate == getNumCoordinate() - 2 && alpCoordinate == getAlphabetCoordinate()) || (numCordinate == getNumCoordinate() - 1 && alpCoordinate == getAlphabetCoordinate())) {
                     {
