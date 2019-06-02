@@ -6,6 +6,7 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.*;
 
+
 /**
  * @author M.Sadra Haeri
  * @version 1.0
@@ -22,7 +23,8 @@ public class ChessGraph extends JButton {
         myFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         myFrame.setLayout(new BorderLayout());
 
-        JButton button = new JButton("Chess Game");
+        JButton button = new JButton("! Chess !");
+        button.setBackground(Color.orange);
 
 
 
@@ -145,7 +147,6 @@ public class ChessGraph extends JButton {
                     } catch (Exception ex) {
                         System.out.println(ex);
                     }
-
                 }
 
 
