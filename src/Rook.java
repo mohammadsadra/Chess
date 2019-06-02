@@ -27,7 +27,7 @@ public class Rook extends Chessman {
             }
         }
 /////////////////////////
-        if (numCordinate == getNumCoordinate() && alpCoordinate != getAlphabetCoordinate()) {
+        if (numCordinate == getNumCoordinate() /*&& alpCoordinate != getAlphabetCoordinate()*/) {
 
             int n = alpCoordinate - getAlphabetCoordinate();
             if (n == 0)
@@ -35,14 +35,20 @@ public class Rook extends Chessman {
             else if (n > 0) {
                 for (int i = 1; i <= n; i++) {
                     for (Chessman chessman : menArr) {
-                        if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() + i) && chessman.getNumCoordinate() == getNumCoordinate())
+                        if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() + i) && chessman.getNumCoordinate() == getNumCoordinate() && i==n && chessman.getColor() != getColor()){
+
+                        }
+                        else if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() + i) && chessman.getNumCoordinate() == getNumCoordinate())
                             return false;
                     }
                 }
             } else {
                 for (int i = 1; i <= (n * (-1)); i++) {
                     for (Chessman chessman : menArr) {
-                        if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() - i) && chessman.getNumCoordinate() == getNumCoordinate())
+                        if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() - i) && chessman.getNumCoordinate() == getNumCoordinate() && i == (n * (-1)) && getColor() != chessman.getColor()){
+
+                        }
+                        else if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() - i) && chessman.getNumCoordinate() == getNumCoordinate())
                             return false;
                     }
                 }
@@ -55,14 +61,20 @@ public class Rook extends Chessman {
             else if (n > 0) {
                 for (int i = 1; i <= n; i++) {
                     for (Chessman chessman : menArr) {
-                        if ((chessman.getNumCoordinate() == getNumCoordinate() + i) && chessman.getAlphabetCoordinate() == getAlphabetCoordinate())
+                        if ((chessman.getNumCoordinate() == getNumCoordinate() + i) && chessman.getAlphabetCoordinate() == getAlphabetCoordinate() && i == n && getColor() != chessman.getColor()){
+
+                        }
+                        else if ((chessman.getNumCoordinate() == getNumCoordinate() + i) && chessman.getAlphabetCoordinate() == getAlphabetCoordinate())
                             return false;
                     }
                 }
             } else {
                 for (int i = 1; i <= (n * -1); i++) {
                     for (Chessman chessman : menArr) {
-                        if ((chessman.getNumCoordinate() == getNumCoordinate() - i) && chessman.getAlphabetCoordinate() == getAlphabetCoordinate())
+                        if((chessman.getNumCoordinate() == getNumCoordinate() - i) && chessman.getAlphabetCoordinate() == getAlphabetCoordinate() && i == (n * -1) && chessman.getColor() != getColor()){
+
+                        }
+                        else if ((chessman.getNumCoordinate() == getNumCoordinate() - i) && chessman.getAlphabetCoordinate() == getAlphabetCoordinate())
                             return false;
                     }
                 }
