@@ -10,6 +10,7 @@ public class Pawn extends Chessman {
 
     public Pawn(String color, int alphabetCoordinate, int numCoordinate) {
         super(color, alphabetCoordinate, numCoordinate);
+
     }
 
     /**
@@ -18,18 +19,21 @@ public class Pawn extends Chessman {
      * @param menArr        array of chessman
      * @return if you can move piece return true
      */
+
     public boolean check(int alpCoordinate, int numCordinate, ArrayList<Chessman> menArr) {
         if (getColor().equals("white")) {
             if (numCordinate == getNumCoordinate() - 1 && alpCoordinate == getAlphabetCoordinate() + 1) {
                 for (Chessman chessman : menArr) {
-                    if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() + 1) && chessman.getNumCoordinate() == getNumCoordinate() - 1) {
+                    if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() + 1) && chessman.getNumCoordinate() == getNumCoordinate() - 1 && chessman.getColor() != getColor()) {
+
                         return true;
                     }
                 }
             }
             if (numCordinate == getNumCoordinate() - 1 && (alpCoordinate == getAlphabetCoordinate() - 1)) {
                 for (Chessman chessman : menArr) {
-                    if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() - 1) && chessman.getNumCoordinate() == getNumCoordinate() - 1) {
+                    if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() - 1) && chessman.getNumCoordinate() == getNumCoordinate() - 1&& chessman.getColor() != getColor()) {
+
                         return true;
                     }
                 }
@@ -37,7 +41,8 @@ public class Pawn extends Chessman {
         } else {
             if (numCordinate == getNumCoordinate() + 1 && (alpCoordinate == getAlphabetCoordinate() - 1)) {
                 for (Chessman chessman : menArr) {
-                    if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() - 1) && chessman.getNumCoordinate() == getNumCoordinate() + 1) {
+                    if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() - 1) && chessman.getNumCoordinate() == getNumCoordinate() + 1&& chessman.getColor() != getColor()) {
+
                         return true;
                     }
 
@@ -45,7 +50,8 @@ public class Pawn extends Chessman {
             }
             if (numCordinate == getNumCoordinate() + 1 && alpCoordinate == getAlphabetCoordinate() + 1) {
                 for (Chessman chessman : menArr) {
-                    if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() + 1) && chessman.getNumCoordinate() == getNumCoordinate() + 1) {
+                    if ((chessman.getAlphabetCoordinate() == getAlphabetCoordinate() + 1) && chessman.getNumCoordinate() == getNumCoordinate() + 1&& chessman.getColor() != getColor()) {
+
                         return true;
                     }
 
@@ -104,6 +110,5 @@ public class Pawn extends Chessman {
 
         return true;
     }
-
 
 }
